@@ -1,6 +1,9 @@
 # Packages
 node_modules
 
+# Orthanc
+.orthanc-db
+
 # Output
 build
 dist
