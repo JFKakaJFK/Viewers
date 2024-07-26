@@ -110,6 +110,8 @@ us.
 
 ### Branches
 
+To update this fork from the upstream, use `git rebase upstream/master`.
+
 #### `master` branch - The latest dev (beta) release
 
 - `master` - The latest dev release
