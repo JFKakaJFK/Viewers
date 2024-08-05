@@ -49,7 +49,6 @@ function fixBulkDataURI(value, instance, dicomWebConfig) {
     return;
   }
 
-
   // in case it is relative path but starts at the server (e.g., /bulk/1e, note the missing http
   // in the beginning and the first character is /) There are two scenarios, whether the wado root
   // is absolute or relative. In case of absolute, we need to prepend the wado root to the bulkdata

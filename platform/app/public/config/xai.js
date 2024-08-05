@@ -22,7 +22,7 @@ window.config = {
       });
     },
   },
-  showStudyList: false, // needed to be able to override the default worklist
+  showStudyList: false, // ! needed to be able to override the default worklist
   extensions: [],
   modes: [],
   customizationService: [
@@ -48,18 +48,46 @@ window.config = {
   defaultDataSourceName: 'dicomweb',
   dataSources: [
     {
+      friendlyName: 'Orthanc Local',
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
       sourceName: 'dicomweb',
       configuration: {
-        friendlyName: 'Orthanc Server',
-        name: 'Orthanc',
-        wadoUriRoot: '/wado',
-        qidoRoot: '/dicom-web',
-        wadoRoot: '/dicom-web',
+        name: 'orthanc',
+        // wadoUriRoot: '/wado',
+        // qidoRoot: '/dicom-web',
+        // wadoRoot: '/dicom-web',
+        wadoUriRoot: 'http://localhost:3000/dicom-web',
+        qidoRoot: 'http://localhost:3000/dicom-web',
+        wadoRoot: 'http://localhost:3000/dicom-web',
+        // TODO use nginx as reverse proxy...
+        // wadoUriRoot: 'http://localhost:8042/dicom-web',
+        // qidoRoot: 'http://localhost:8042/dicom-web',
+        // wadoRoot: 'http://localhost:8042/dicom-web',
         qidoSupportsIncludeField: false,
+        omitQuotationForMultipartRequest: true,
+        supportsReject: false,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
-        omitQuotationForMultipartRequest: true,
+        enableStudyLazyLoad: true,
+        supportsFuzzyMatching: false,
+        supportsWildcard: true,
+        staticWado: true,
+        // singlepart: 'bulkdata,video',
+        singlepart: 'video',
+        acceptHeader: [
+          'multipart/related; type=application/pdf; transfer-syntax=*',
+          'multipart/related; type=application/octet-stream; transfer-syntax=*',
+        ],
+        bulkDataURI: {
+          enabled: true,
+          relativeResolution: 'studies',
+          // In this scenario, Orthanc is not aware that is being served at http://localhost/orthanc/ so we must tell OHIF to fix
+          // the bulkDataURI
+          // startsWith: 'http://localhost:3000/',
+          // In this case the webpack URL rewrite happens first?, so we need to use the IP
+          startsWith: 'http://127.0.0.1/',
+          prefixWith: '/orthanc/',
+        },
         dicomUploadEnabled: true,
       },
     },

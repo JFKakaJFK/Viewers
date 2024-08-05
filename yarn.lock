@@ -1492,6 +1492,18 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
+"@cornerstonejs/adapters@^1.77.6":
+  version "1.83.0"
+  resolved "https://registry.yarnpkg.com/@cornerstonejs/adapters/-/adapters-1.83.0.tgz#934c462d98b7857ef9670702547505d112fa13f8"
+  integrity sha512-PKNdzwI/i79Gu9ZxM4SemttCKJpSnMUSQSBu27mXzFzm5ENyOGnus3sLV5ciqZBRaHiuyteaHosJhxOavxaX1g==
+  dependencies:
+    "@babel/runtime-corejs2" "^7.17.8"
+    "@cornerstonejs/tools" "^1.83.0"
+    buffer "^6.0.3"
+    dcmjs "^0.29.8"
+    gl-matrix "^3.4.3"
+    lodash.clonedeep "^4.5.0"
+    ndarray "^1.0.19"
 
 "@cornerstonejs/adapters@^1.81.6", "@cornerstonejs/adapters@^1.82.0":
   version "1.82.0"
@@ -1531,7 +1543,18 @@
   resolved "https://registry.yarnpkg.com/@cornerstonejs/codec-openjph/-/codec-openjph-2.4.5.tgz#8690b61a86fa53ef38a70eee9d665a79229517c0"
   integrity sha512-MZCUy8VG0VG5Nl1l58+g+kH3LujAzLYTfJqkwpWI2gjSrGXnP6lgwyy4GmPRZWVoS40/B1LDNALK905cNWm+sg==
 
-"@cornerstonejs/core@^1.78.1", "@cornerstonejs/core@^1.81.3":
+"@cornerstonejs/core@^1.77.6", "@cornerstonejs/core@^1.83.0":
+  version "1.83.0"
+  resolved "https://registry.yarnpkg.com/@cornerstonejs/core/-/core-1.83.0.tgz#d8781fe95a404f609ebd25a3f3fd93a3a4f58c70"
+  integrity sha512-EEOHw+G6pjSmuPvTsANPKbY/sAuskIkt24qpuE6+1tpKMt7/1pTrJY8mVHIO4/g6cfyWJl9RO8w5nLyR77SomA==
+  dependencies:
+    "@kitware/vtk.js" "30.4.1"
+    comlink "^4.4.1"
+    detect-gpu "^5.0.22"
+    gl-matrix "^3.4.3"
+    lodash.clonedeep "4.5.0"
+
+"@cornerstonejs/core@^1.81.3":
   version "1.81.3"
   resolved "https://registry.yarnpkg.com/@cornerstonejs/core/-/core-1.81.3.tgz#76deaee4a2cce24db5695cb87857accea5645263"
   integrity sha512-Uievs/wBpw20Xj4B+8UEjb/qe+cmSfz2oWfQzBANcWoqI5pXD77evXE0s6hORCMr4yFUmTIMbGnWwXT2fF2bYw==
@@ -1581,6 +1604,18 @@
   integrity sha512-1nnlloa6g5zfirAbVnZ+lfuM6DdtcN8kHkZ29xkedzpP24Le4fRHNeuNf6jTSGcgDXPhoZ+WA+q8NnH6wj1h1Q==
   dependencies:
     "@cornerstonejs/core" "^1.82.0"
+    "@icr/polyseg-wasm" "0.4.0"
+    "@types/offscreencanvas" "2019.7.3"
+    comlink "^4.4.1"
+    lodash.clonedeep "4.5.0"
+    lodash.get "^4.4.2"
+
+"@cornerstonejs/tools@^1.83.0":
+  version "1.83.0"
+  resolved "https://registry.yarnpkg.com/@cornerstonejs/tools/-/tools-1.83.0.tgz#6148e72972d826abfa640924f5c34f0d4acd75a3"
+  integrity sha512-P7b0iPGidBJ7rlfnpiIZV2jgivdVZKQ7emWd59CGN4HgEStPQOMrb6lnrDvZs1BDK2d2TjZB6vhwH0G/B/quUw==
+  dependencies:
+    "@cornerstonejs/core" "^1.83.0"
     "@icr/polyseg-wasm" "0.4.0"
     "@types/offscreencanvas" "2019.7.3"
     comlink "^4.4.1"
