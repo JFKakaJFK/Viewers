@@ -72,8 +72,8 @@ window.config = {
         supportsFuzzyMatching: false,
         supportsWildcard: true,
         staticWado: true,
-        // singlepart: 'bulkdata,video',
-        singlepart: 'video',
+        singlepart: 'bulkdata,video',
+        // singlepart: 'video',
         acceptHeader: [
           'multipart/related; type=application/pdf; transfer-syntax=*',
           'multipart/related; type=application/octet-stream; transfer-syntax=*',
@@ -81,11 +81,13 @@ window.config = {
         bulkDataURI: {
           enabled: true,
           relativeResolution: 'studies',
+          // relativeResolution: 'series',
+          // relativeResolution: 'instances',
           // In this scenario, Orthanc is not aware that is being served at http://localhost/orthanc/ so we must tell OHIF to fix
           // the bulkDataURI
-          // startsWith: 'http://localhost:3000/',
+          startsWith: 'http://localhost:3000/',
           // In this case the webpack URL rewrite happens first?, so we need to use the IP
-          startsWith: 'http://127.0.0.1/',
+          // startsWith: 'http://127.0.0.1/',
           prefixWith: '/orthanc/',
         },
         dicomUploadEnabled: true,
